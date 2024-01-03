@@ -105,7 +105,7 @@ jobs:
 
   TrivyScanCheck:
     runs-on: ubuntu-latest
-    needs: ["UnitTest", "gitleaksCheck", "SonarCloudScanCheck", "SnykScanCheck"]
+    needs: ["UnitTest", "SonarCloudScanCheck", "SnykScanCheck"]
 
     steps:
       - name: Checkout code
