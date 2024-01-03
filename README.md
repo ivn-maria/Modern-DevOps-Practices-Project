@@ -45,33 +45,37 @@ as well as some Security Pactices
 - Project Planning: understand the requirements and expectations, create
 a project plan, choose which practices to include in the project
 
-  The practices that are included in the solution of the project are:
+The practices that are included in the solution of the project are:
 Phases of SDLC, Source control, Branching strategies, Building Pipelines,
 Continuous Integration, Continuous Delivery, Security, Docker, Kubernetes.
 
-  SDLC phase: Planning phase
+SDLC phase: Planning phase
+
 - Source control: set up a git repository for the project
 
-  This repository is set up by forking [Tic-Tac-Toe](https://github.com/BornaSepic/Tic-Tac-Toe)
+This repository is set up by forking [Tic-Tac-Toe](https://github.com/BornaSepic/Tic-Tac-Toe)
 repository with the Tic Tac Toe application source code.
 
-  SDLC phase: Planning phase
+SDLC phase: Planning phase
+
 - Branching strategies: choose a branching strategy that fits the project
 
   I chose to have one branch "develop" for creating the automated software
 delivery process, and merge it to the main branch when needed. So in this
 step I created the "develop" branch and started to work there.
 
-  SDLC phase: Planning phase
+SDLC phase: Planning phase
+
 - Style Checks: execute checks that are intended to enforce a consistent
 coding style across the project
 
-  The process of the style checks included adding licence. contributing and
+The process of the style checks included adding licence. contributing and
 .editorconfig, and then executing flake8, editorconfig-checker and
 mardownlint-cli. After fixing the inconcictencies of the files, I started my
 workflow pipeline with these three security checks.
 
-  SDLC phase: Implementation and Testing Phase
+SDLC phase: Implementation and Testing Phase
+
 - Testing: execute unit tests to ensure that the application logic is correct
 
 I executed a few unit tests to see if the functions in the source code are
@@ -80,6 +84,7 @@ I added them as the next step in the pipeline that first waits the style
 checks to be completed.
 
 SDLC phase: Testing Phase
+
 - Security: integrate static code analysis (SAST) tools into the CI pipeline
 
 This includes using SAST tools for static code analysis. I implemented in
