@@ -22,16 +22,17 @@ successful Cl
 - Security: security practices are embeded throughout the pipeline,
 automated tests are run whenever code changes are pushed to the repository
 - Docker: the application is containerized using Docker, Dockerfile is
-used to define the application's dependencies and runtime environment
-- Kubernetes: the containerized application is deplyed to a Kubernetes
+used to define the application's dependencies and runtime environment,
+the Docker image is built and published to DockerHub
+- Kubernetes: the containerized application is deployed to a Kubernetes
 cluster
 
 ## Additional Information
 
 - The pipeline starts with a git repository
-- The solution is T-shaped or E-shaped – where we have a nice working
-horizontal + at least one deep dive vertical
-- Where possible, the solution is as code
+- The solution is T-shaped: we have a nice working horizontal and one deep
+dive vertical at Docker
+- The solution of most steps is as code
 - The documentation of the project is described here
 - The tools that are used are: Git, GitHub Actions, Docker, Kubernetes
 
@@ -80,16 +81,24 @@ check to be completed.
   This includes using SAST tools for static code analysis. I implemented in
 the workflow thebfollowing security checks: gitleaks for hardcoded secrets,
 SonarCloudScan and SnykScan. For SonarCloudScan and SnykScan I created tokens,
-as variables to grant access.
+as variables to grant access. They are executed in parallel with the unit tests.
 
   SDLC phase: Implementation and Testing Phase
 
 - Docker: write a Dockerfile to containerize your application, build and test
-the Docker image locally, and then itegrate it to the pipeline
+the Docker image locally, and then itegrate it to the pipeline with build and
+publish to DockerHub
+
+  Using Docker practices I created Dockerfile, which i tested locally. After I
+successfully built Docker image and exposed the application on localhost with
+the Dockerfile, I implemented it in the pipeline. Firstly, it executes TrivyScan
+(if the testing and security steps are completed)for the Docker image, and only
+after the scan is successfull it builds the image, and publish it to my DockerHub
+account.
 
   SDLC: Implementation and Testing Phase
 
-- Kubernetes: set up a Kubernetes cluster (local or on a cloud provider).
+- TO DO Kubernetes: set up a Kubernetes cluster (local or on a cloud provider).
 
   Write Kubernetes manifests (YAML files) to define your application deployment.
 Define Kubernetes manifests (YAML files) to specify how your application should
@@ -106,7 +115,7 @@ that needed automation is implemented in the workflow.
 
   SDLC phase: Implementatioon Phase
 
-- Continuous Delivery (CD): expand the Cl pipeline to include deployment steps
+- TO DO Continuous Delivery (CD): expand the Cl pipeline to include deployment steps
 to staging environments and implement automated deployment scripts or tools
 
   SDLC phase: Implementation and Testing Phase
