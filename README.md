@@ -17,28 +17,27 @@ bug-free code
 in a pipeline, so that the build process is autometed to ensure
 consistency
 - Continuous Integration: CI is integrated into the pipeline
-- Continuous Delivery: CD practices are implemented to automatically
-deploy code changes to staging or production environments after
-successful CI
+- Continuous Delivery: CD practices are implemented to manually deploy
+the app to production using Kubernetes
 - Security: security practices are embeded throughout the pipeline,
 automated tests are run whenever code changes are pushed to the repository
 - Docker: the application is containerized using Docker, Dockerfile is
 used to define the application's dependencies and runtime environment,
 the Docker image is built and published to DockerHub
-- Kubernetes: the containerized application is deployed to a Kubernetes
-cluster
+- Kubernetes: the containerized application is lovally deployed to a
+Kubernetes cluster
 
 ## Additional Information
 
 - The pipeline starts with a git repository
 - The solution is T-shaped: we have a working horizontal and one deep
 dive vertical at Docker
-- The solution of most steps is as code
+- The solution, where possible, is as code
 - The documentation of the project is described here
 - Mandatory components - Continuous Integration, Deploy to Kubernetes,
 are included
 - The tools that are used are: Git, GitHub Actions, Docker, Kubernetes,
-as well as some Security Pactices
+some Security Pactices and others
 
 ## Process
 
@@ -60,7 +59,7 @@ SDLC phase: Planning phase
 
 - Branching strategies: choose a branching strategy that fits the project
 
-  I chose to have one branch "develop" for creating the automated software
+I chose to have one branch "develop" for creating the automated software
 delivery process, and merge it to the main branch when needed. So in this
 step I created the "develop" branch and started to work there.
 
@@ -85,7 +84,7 @@ checks to be completed.
 
 SDLC phase: Testing Phase
 
-- Security: integrate static code analysis (SAST) tools into the CI pipeline
+- Security: integrate static code analysis (SAST) tools into the Cl pipeline
 
 This includes using SAST tools for static code analysis. I implemented in
 the workflow the following security checks: gitleaks for hardcoded secrets,
@@ -94,38 +93,55 @@ as variables to grant access. They are executed in parallel with the unit tests.
 
 SDLC phase: Implementation and Testing Phase
 
-- Docker: write a Dockerfile to containerize your application, build and test
+- Docker: write a Dockerfile to containerize the application, build and test
 the Docker image locally, and then itegrate it to the pipeline with build and
 publish to DockerHub
 
 Using Docker practices I created Dockerfile, which I tested locally. After I
-successfully built Docker image with the Dockerfile, and successfully exposed the
-application on localhost, I implemented these steps in the pipeline. After the
+successfully built Docker image with the Dockerfile, and successfully exposed
+the application on localhost, I implemented the built in the pipeline. After the
 testing and security steps are completed, TrivyScan is executed for the Docker image,
-and only after the scan is successfull the Docker image is built and then published
-to my DockerHub account.
+and only after the scan is successfull the Docker image is built, and then published
+to my DockerHub account. Locally you can start the app with the following commands:
+1. docker build -t modern-devops-practices-project . # you should be in the root
+directory
+2. docker run -p 8000:80 modern-devops-practices-project # this will port the app
+to http://localhost:8000/
 
 SDLC: Implementation and Testing Phase
 
-- TO DO Kubernetes: set up a Kubernetes cluster (local or on a cloud provider).
+- Kubernetes: set up a local Kubernetes cluster
 
-Write Kubernetes manifests (YAML files) to define your application deployment.
-Define Kubernetes manifests (YAML files) to specify how your application should
-run, scale, and connect to other services. Use Kubernetes for orchestration and
-management of containerized applications.
+First I wrote Kubernetes manifests (deployment.yaml and service.yaml, using
+NodePort for the connection) to define the application deployment. Then, I started
+my Docker and Minikube. With all this being set, I executed the following commands:
+1. docker build -t tic-tac-toe:latest .
+2. docker tag tic-tac-toe:latest tic-tac-toe:latest
+3. docker images # to verify that my local image is listed
+4. kubectl apply -f deployment.yaml
+5. kubectl get pods # ensure that the pod transitions to the Running state
+6. kubectl apply -f service.yaml
+7. minikube service tic-tac-toe-service # the app should automatically be opened in
+browser
+Following this step, the app is successfully deployed to Kubernetes cluster.
 
 SDLC phase: Implementation and Testing Phase
 
-- Continuous Integration: GitHub Action CI tool is used to set up a basic build
-pipeline
+- Continuous Integration: GitHub Action CI tool is used to set up a basic
+build pipeline
 
-I built the pipeline in parallel with doing the rest of the task. Each step that
-could be automated is implemented in the CI workflow.
+I built the pipeline in parallel with doing the rest of the task. Each step
+that needed automation is implemented in the workflow. The CI part of the
+pipeline includes: style checks, testing, security and docker.
 
-SDLC phase: Implementatioon Phase
+SDLC phase: Implementation Phase
 
-- TO DO Continuous Delivery: expand the Cl pipeline to include deployment steps
-to staging environments and implement automated deployment scripts or tools
+- Continuous Delivery: manually deploy the app to a Kubernetes cluster
+
+I have a separate manual step for deploying to production after successful
+testing in staging. The final deployment to production is initiated manually.
+If the pipeline included fully automated deployment to production without manual
+intervention, it would be referred to as Continuous Deployment.
 
 SDLC phase: Implementation and Testing Phase
 
