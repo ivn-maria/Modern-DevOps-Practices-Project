@@ -130,7 +130,7 @@ to my DockerHub account. Locally you can start the app with the following comman
 1. docker build -t modern-devops-practices-project . # should be executed in the root
 directory
 2. docker run -p 8000:80 modern-devops-practices-project # this will port the app
-to [http://localhost:8000/]
+to [localhost:8000](http://localhost:8000/)
 
 SDLC: Build, Deploy (it is involved in building containerized applications and
 deploying them in consistent environments)
@@ -140,7 +140,7 @@ deploying them in consistent environments)
 Task: set up a local Kubernetes cluster
 
 Process: First I wrote Kubernetes manifests (deployment.yaml and service.yaml, using
-NodePort) to define the application deployment. Then, I started my Docker and 
+NodePort) to define the application deployment. Then, I started my Docker and
 Minikube. With all this being set, I executed the following commands:
 
 1. docker build -t tic-tac-toe:latest .
