@@ -103,10 +103,11 @@ the application on localhost, I implemented the built in the pipeline. After the
 testing and security steps are completed, TrivyScan is executed for the Docker image,
 and only after the scan is successfull the Docker image is built, and then published
 to my DockerHub account. Locally you can start the app with the following commands:
+
 1. docker build -t modern-devops-practices-project . # you should be in the root
 directory
 2. docker run -p 8000:80 modern-devops-practices-project # this will port the app
-to http://localhost:8000/
+to [http://localhost:8000/]
 
 SDLC: Implementation and Testing Phase
 
@@ -115,14 +116,15 @@ SDLC: Implementation and Testing Phase
 First I wrote Kubernetes manifests (deployment.yaml and service.yaml, using
 NodePort for the connection) to define the application deployment. Then, I started
 my Docker and Minikube. With all this being set, I executed the following commands:
+
 1. docker build -t tic-tac-toe:latest .
 2. docker tag tic-tac-toe:latest tic-tac-toe:latest
 3. docker images # to verify that my local image is listed
 4. kubectl apply -f deployment.yaml
 5. kubectl get pods # ensure that the pod transitions to the Running state
 6. kubectl apply -f service.yaml
-7. minikube service tic-tac-toe-service # the app should automatically be opened in
-browser
+7. minikube service tic-tac-toe-service # the app should automatically be opened
+in browser
 Following this step, the app is successfully deployed to Kubernetes cluster.
 
 SDLC phase: Implementation and Testing Phase
