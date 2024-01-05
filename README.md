@@ -23,14 +23,14 @@ CI is integrated into the pipeline.
 6. Continuous Delivery
 CD practices are implemented to manually deploy the application to
 production using Kubernetes.
-8. Security
+7. Security
 Security practices are embeded throughout the pipeline, automated tests are
 run whenever code changes are pushed to the repository.
-9. Docker
+8. Docker
 The application is containerized using Docker, Dockerfile is used to define
 the application's dependencies and runtime environment, the Docker image is
 built and published to DockerHub.
-10. Kubernetes
+9. Kubernetes
 The containerized application is locally deployed to a Kubernetes cluster.
 
 ## Additional Information
@@ -127,9 +127,9 @@ testing and security steps are completed, TrivyScan is executed for the Docker i
 and only after the scan is successfull the Docker image is built, and then published
 to my DockerHub account. Locally you can start the app with the following commands:
 
-1. docker build -t modern-devops-practices-project . # should be executed in the root
-directory
-2. docker run -p 8000:80 modern-devops-practices-project # this will port the app
+1. docker build -t modern-devops-practices-project . # should be executed in the
+root directory
+3. docker run -p 8000:80 modern-devops-practices-project # this will port the app
 to [localhost:8000](http://localhost:8000/)
 
 SDLC: Build, Deploy (it is involved in building containerized applications and
@@ -190,7 +190,7 @@ At the end I ensured that your documentation is complete and up-to-date.
 SDLC phase: Operate (it is ongoing but becomes particularly important during the
 operational phase to guide and support ongoing operations)
 
-## Continuous Integration
+## Continuous Integration Vertical Deep Dive
 
 ### Definition
 
