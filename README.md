@@ -129,7 +129,7 @@ to my DockerHub account. Locally you can start the app with the following comman
 
 1. docker build -t modern-devops-practices-project . # should be executed in the
 root directory
-3. docker run -p 8000:80 modern-devops-practices-project # this will port the app
+2. docker run -p 8000:80 modern-devops-practices-project # this will port the app
 to [localhost:8000](http://localhost:8000/)
 
 SDLC: Build, Deploy (it is involved in building containerized applications and
