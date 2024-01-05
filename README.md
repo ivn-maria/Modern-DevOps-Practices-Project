@@ -8,10 +8,10 @@ to build a complete automated software delivery process with pipelines.
 ## Used Practices
 
 1. Phases of SDLC
-Software delelopment lifestyle phases are integrated into the project and
+Software development lifestyle phases are integrated into the project and
 include: plan, code, build, test, release, deploy, operate, monitor.
 2. Source control
-The project is build within this git repository, using branching, commits,
+The project is built within this git repository, using branching, commits,
 workflows and others.
 3. Branching strategies
 They are used for organized development with bug-free code.
@@ -21,16 +21,16 @@ build process is autometed to ensure consistency.
 5. Continuous Integration
 CI is integrated into the pipeline.
 6. Continuous Delivery
-CD practices are implemented to manually deploy the app to production using
-Kubernetes.
-7. Security
+CD practices are implemented to manually deploy the application to
+production using Kubernetes.
+8. Security
 Security practices are embeded throughout the pipeline, automated tests are
 run whenever code changes are pushed to the repository.
-8. Docker
+9. Docker
 The application is containerized using Docker, Dockerfile is used to define
 the application's dependencies and runtime environment, the Docker image is
 built and published to DockerHub.
-9. Kubernetes
+10. Kubernetes
 The containerized application is locally deployed to a Kubernetes cluster.
 
 ## Additional Information
@@ -54,7 +54,7 @@ a project plan, choose which practices to include in the project
 
 Process: The practices that are included in the solution of the project are:
 Phases of SDLC, Source control, Branching strategies, Building Pipelines,
-Continuous Integration, Continuous Delivery, Security, Docker, Kubernetes.
+uous Integration, Continuous Delivery, Security, Docker, Kubernetes.
 
 SDLC phase: Plan
 
@@ -75,16 +75,16 @@ Process: I chose to have one branch "develop" for creating the automated softwar
 delivery process, and merge it to the main branch when needed. So in this
 step I created the "develop" branch and started to work there.
 
-SDLC phase: Code (they pertain to organizing and managing code branches)
+SDLC phase: Code (they belong to organizing and managing code branches)
 
 ### Style Checks
 
-Task: execute checks that are intended to enforce a consistent
-coding style across the project
+Task: execute checks that are intended to enforce a consistent coding style across
+the project
 
 Process: The process of the style checks included adding licence. contributing and
 .editorconfig, and then executing flake8, editorconfig-checker and
-mardownlint-cli. After fixing the inconcictencies of the files, I started my
+mardownlint-cli. After fixing the inconsistencies of the files, I started my
 workflow pipeline with these three security checks.
 
 SDLC phase: Code (they ensure code consistency and adherence to coding
@@ -103,12 +103,13 @@ SDLC phase: Test
 
 ### Security
 
-Task: integrate static code analysis (SAST) tools into the Cl pipeline
+Task: integrate static code analysis tools into the Cl pipeline
 
 Process: This includes using SAST tools for static code analysis. I implemented in
 the workflow the following security checks: gitleaks for hardcoded secrets,
 SonarCloudScan and SnykScan. For SonarCloudScan and SnykScan I created tokens,
-as variables to grant access. They are executed in parallel with the unit tests.
+as variables to grant access to the security tools. They are executed in parallel
+with the unit tests in the pipeline.
 
 SDLC phase: Operate (it is an ongoing consideration throughout the SDLC but
 becomes critical during the operational phase)
@@ -126,7 +127,7 @@ testing and security steps are completed, TrivyScan is executed for the Docker i
 and only after the scan is successfull the Docker image is built, and then published
 to my DockerHub account. Locally you can start the app with the following commands:
 
-1. docker build -t modern-devops-practices-project . # you should be in the root
+1. docker build -t modern-devops-practices-project . # should be executed in the root
 directory
 2. docker run -p 8000:80 modern-devops-practices-project # this will port the app
 to [http://localhost:8000/]
@@ -139,8 +140,8 @@ deploying them in consistent environments)
 Task: set up a local Kubernetes cluster
 
 Process: First I wrote Kubernetes manifests (deployment.yaml and service.yaml, using
-NodePort for the connection) to define the application deployment. Then, I started
-my Docker and Minikube. With all this being set, I executed the following commands:
+NodePort) to define the application deployment. Then, I started my Docker and 
+Minikube. With all this being set, I executed the following commands:
 
 1. docker build -t tic-tac-toe:latest .
 2. docker tag tic-tac-toe:latest tic-tac-toe:latest
@@ -150,7 +151,7 @@ my Docker and Minikube. With all this being set, I executed the following comman
 6. kubectl apply -f service.yaml
 7. minikube service tic-tac-toe-service # the app should automatically be opened
 in browser
-Following this step, the app is successfully deployed to Kubernetes cluster.
+Following these steps, the app is successfully deployed to a Kubernetes cluster.
 
 SDLC phase: Release, Deploy, Operate (it defines how your application should be
 represented and configured for deploymenit, it is also primarily associated with
@@ -189,7 +190,7 @@ At the end I ensured that your documentation is complete and up-to-date.
 SDLC phase: Operate (it is ongoing but becomes particularly important during the
 operational phase to guide and support ongoing operations)
 
-## Continuos Integration
+## Continuous Integration
 
 ### Definition
 
