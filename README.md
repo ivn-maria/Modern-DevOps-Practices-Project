@@ -224,7 +224,7 @@ choose to run local unit tests on their code as an extra verification layer befo
 integrating. A continuous integration service automatically builds and runs unit
 tests on the new code changes to immediately surface any errors.
 Continuous integration refers to the build and unit testing stages of the software
-release process. Every revision that is committed triggers an automated build and 
+release process. Every revision that is committed triggers an automated build and
 test. With continuous delivery, code changes are automatically built, tested, and
 prepared for a release to production. Continuous delivery expands upon continuous
 integration by deploying all code changes to a testing environment and/or a
