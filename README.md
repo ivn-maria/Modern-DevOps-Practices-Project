@@ -213,8 +213,8 @@ manual tasks and encouraging behaviors that help reduce the number of errors and
 bugs released to customers.
 With more frequent testing, your team can discover and address bugs earlier before
 they grow into larger problems later.
-Continuous integration helps your team deliver updates to their customers faster and
-more frequently.
+Continuous integration helps your team deliver updates to their customers faster
+and more frequently.
 
 ### Continuos Delivery
 
