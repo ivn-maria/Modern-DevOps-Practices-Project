@@ -13,8 +13,9 @@ planning, design, development, testing, deployment, and maintenance
 using branching, commits, workflows and others
 - Branching strategies: they are used for organized development with
 bug-free code
-- Building Pipelines: most steps are defined in a pipeline, so the
-build process is autometed to ensure consistency and repeatability
+- Building Pipelines: the steps possible for automation are defined
+in a pipeline, so that the build process is autometed to ensure
+consistency
 - Continuous Integration: CI is integrated into the pipeline
 - Continuous Delivery: CD practices are implemented to manually deploy
 the app to production using Kubernetes
@@ -29,12 +30,14 @@ Kubernetes cluster
 ## Additional Information
 
 - The pipeline starts with a git repository
-- The solution is T-shaped: we have a nice working horizontal and one deep
+- The solution is T-shaped: we have a working horizontal and one deep
 dive vertical at Docker
 - The solution, where possible, is as code
 - The documentation of the project is described here
-- The tools that are used are: Git, GitHub Actions, Docker, Kubernetes and
-others
+- Mandatory components - Continuous Integration, Deploy to Kubernetes,
+are included
+- The tools that are used are: Git, GitHub Actions, Docker, Kubernetes,
+some Security Pactices and others
 
 ## Process
 
@@ -47,27 +50,27 @@ Continuous Integration, Continuous Delivery, Security, Docker, Kubernetes.
 
 SDLC phase: Planning phase
 
-- Source control: set up a Git repository for the project
+- Source control: set up a git repository for the project
 
-This repository is set up by forking the repository with the Tic Tac Toe
-application sorce code.
+This repository is set up by forking [Tic-Tac-Toe](https://github.com/BornaSepic/Tic-Tac-Toe)
+repository with the Tic Tac Toe application source code.
 
 SDLC phase: Planning phase
 
 - Branching strategies: choose a branching strategy that fits the project
 
-I chose to have one branch "develop" for developing the automated software
-delivery process, and merge it to the main branch when needed. So I created
-the "develop" branch and started to work there.
+I chose to have one branch "develop" for creating the automated software
+delivery process, and merge it to the main branch when needed. So in this
+step I created the "develop" branch and started to work there.
 
 SDLC phase: Planning phase
 
 - Style Checks: execute checks that are intended to enforce a consistent
 coding style across the project
 
-The process of the Style checks included adding licence, contributing and
-.editorconfig file, and then executing flake8, editorconfig-checker and
-mardownlint-cli. After fixing the inconcictency of the files, I started my
+The process of the style checks included adding licence. contributing and
+.editorconfig, and then executing flake8, editorconfig-checker and
+mardownlint-cli. After fixing the inconcictencies of the files, I started my
 workflow pipeline with these three security checks.
 
 SDLC phase: Implementation and Testing Phase
@@ -77,14 +80,14 @@ SDLC phase: Implementation and Testing Phase
 I executed a few unit tests to see if the functions in the source code are
 working as intended. When the unit tests were done and successfully executed,
 I added them as the next step in the pipeline that first waits the style
-check to be completed.
+checks to be completed.
 
 SDLC phase: Testing Phase
 
 - Security: integrate static code analysis (SAST) tools into the Cl pipeline
 
 This includes using SAST tools for static code analysis. I implemented in
-the workflow thebfollowing security checks: gitleaks for hardcoded secrets,
+the workflow the following security checks: gitleaks for hardcoded secrets,
 SonarCloudScan and SnykScan. For SonarCloudScan and SnykScan I created tokens,
 as variables to grant access. They are executed in parallel with the unit tests.
 
@@ -142,7 +145,7 @@ intervention, it would be referred to as Continuous Deployment.
 
 SDLC phase: Implementation and Testing Phase
 
-- Documentation: document each step of your pipeline and the configuration details
+- Documentation: document each step of the solution
 
 I wrote the documentation while I was doing the taks, so it would be consistent.
 At the end I ensured that your documentation is complete and up-to-date.
