@@ -10,27 +10,27 @@ to build a complete automated software delivery process with pipelines.
 1. Phases of SDLC
 Software delelopment lifestyle phases are integrated into the project and
 include: plan, code, build, test, release, deploy, operate, monitor.
-3. Source control
+2. Source control
 The project is build within this git repository, using branching, commits,
 workflows and others.
-4. Branching strategies
+3. Branching strategies
 They are used for organized development with bug-free code.
-5. Building Pipelines
+4. Building Pipelines
 The steps possible for automation are defined in a pipeline, so that the
 build process is autometed to ensure consistency.
-6. Continuous Integration
+5. Continuous Integration
 CI is integrated into the pipeline.
-7. Continuous Delivery
+6. Continuous Delivery
 CD practices are implemented to manually deploy the app to production using
 Kubernetes.
-8. Security
+7. Security
 Security practices are embeded throughout the pipeline, automated tests are
 run whenever code changes are pushed to the repository.
-9. Docker
+8. Docker
 The application is containerized using Docker, Dockerfile is used to define
 the application's dependencies and runtime environment, the Docker image is
 built and published to DockerHub.
-10. Kubernetes
+9. Kubernetes
 The containerized application is locally deployed to a Kubernetes cluster.
 
 ## Additional Information
@@ -47,7 +47,7 @@ some Security Pactices and others
 
 ## Steps of Building the Solution
 
-### Project Planning
+# Project Planning
 
 Task: understand the requirements and expectations, create
 a project plan, choose which practices to include in the project
@@ -58,7 +58,7 @@ Continuous Integration, Continuous Delivery, Security, Docker, Kubernetes.
 
 SDLC phase: Plan
 
-## Source control
+# Source control
 
 Task: set up a git repository for the project
 
@@ -67,7 +67,7 @@ repository with the Tic Tac Toe application source code.
 
 SDLC phase: Code (it involves managing and tracking changes to the codebase)
 
-## Branching strategies
+# Branching strategies
 
 Task: choose a branching strategy that fits the project
 
@@ -77,7 +77,7 @@ step I created the "develop" branch and started to work there.
 
 SDLC phase: Code (they pertain to organizing and managing code branches)
 
-## Style Checks
+# Style Checks
 
 Task: execute checks that are intended to enforce a consistent
 coding style across the project
@@ -90,7 +90,7 @@ workflow pipeline with these three security checks.
 SDLC phase: Code (they ensure code consistency and adherence to coding
 standards during the coding phase)
 
-## Testing:
+# Testing
 
 Task: execute unit tests to ensure that the application logic is correct
 
@@ -101,7 +101,7 @@ checks to be completed.
 
 SDLC phase: Test
 
-## Security
+# Security
 
 Task: integrate static code analysis (SAST) tools into the Cl pipeline
 
@@ -113,14 +113,14 @@ as variables to grant access. They are executed in parallel with the unit tests.
 SDLC phase: Operate (it is an ongoing consideration throughout the SDLC but
 becomes critical during the operational phase)
 
-## Docker
+# Docker
 
 Task: write a Dockerfile to containerize the application, build and test
 the Docker image locally, and then itegrate it to the pipeline with build and
 publish to DockerHub
 
-Process: Using Docker practices I created Dockerfile, which I tested locally. After I
-successfully built Docker image with the Dockerfile, and successfully exposed
+Process: Using Docker practices I created Dockerfile, which I tested locally. After
+I successfully built Docker image with the Dockerfile, and successfully exposed
 the application on localhost, I implemented the built in the pipeline. After the
 testing and security steps are completed, TrivyScan is executed for the Docker image,
 and only after the scan is successfull the Docker image is built, and then published
@@ -134,7 +134,7 @@ to [http://localhost:8000/]
 SDLC: Build, Deploy (it is involved in building containerized applications and
 deploying them in consistent environments)
 
-## Kubernetes
+# Kubernetes
 
 Task: set up a local Kubernetes cluster
 
@@ -156,7 +156,7 @@ SDLC phase: Release, Deploy, Operate (it defines how your application should be
 represented and configured for deploymenit, it is also primarily associated with
 deploying and operating containerized applications in a production environment)
 
-## Continuous Integration
+# Continuous Integration
 
 Task: use GitHub Action CI tool to set up a basic build pipeline
 
@@ -167,7 +167,7 @@ pipeline includes: style checks, testing, security and docker.
 SDLC phase: Build, Test (it involves automatically integrating code changes and
 running tests to ensure code quality)
 
-## Continuous Delivery
+# Continuous Delivery
 
 Task: manually deploy the app to a Kubernetes cluster
 
@@ -179,7 +179,7 @@ intervention, it would be referred to as Continuous Deployment.
 SDLC phase: Release, Deploy (it releases and deploy of applications to different
 environments)
 
-## Documentation
+# Documentation
 
 Task: document each step of the solution
 
@@ -191,7 +191,7 @@ operational phase to guide and support ongoing operations)
 
 ## Continuos Integration
 
-### Definition
+# Definition
 
 Continuous integration is a DevOps software development practice where
 developers regularly merge their code changes into a central repository,
@@ -201,7 +201,7 @@ The key goals of continuous integration are to find and address bugs quicker,
 improve software quality, and reduce the time it takes to validate and release
 new software updates.
 
-### Benefits
+# Benefits
 
 In the past, developers on a team might work in isolation for an extended
 period of time and only merge their changes to the master branch once their
@@ -209,14 +209,14 @@ work was completed. This made merging code changes difficult and time-consuming,
 and also resulted in bugs accumulating for a long time without correction.
 These factors made it harder to deliver updates to customers quickly.
 Continuous integration helps your team be more productive by freeing developers from
-manual tasks and encouraging behaviors that help reduce the number of errors and bugs
-released to customers.
-With more frequent testing, your team can discover and address bugs earlier before they
-grow into larger problems later.
-Continuous integration helps your team deliver updates to their customers faster and more
-frequently.
+manual tasks and encouraging behaviors that help reduce the number of errors and
+bugs released to customers.
+With more frequent testing, your team can discover and address bugs earlier before
+they grow into larger problems later.
+Continuous integration helps your team deliver updates to their customers faster and
+more frequently.
 
-### Continuos Delivery
+# Continuos Delivery
 
 With continuous integration, developers frequently commit to a shared repository
 using a version control system such as Git. Prior to each commit, developers may
@@ -224,8 +224,8 @@ choose to run local unit tests on their code as an extra verification layer befo
 integrating. A continuous integration service automatically builds and runs unit
 tests on the new code changes to immediately surface any errors.
 Continuous integration refers to the build and unit testing stages of the software
-release process. Every revision that is committed triggers an automated build and test.
-With continuous delivery, code changes are automatically built, tested, and prepared
-for a release to production. Continuous delivery expands upon continuous integration by
-deploying all code changes to a testing environment and/or a production environment
-after the build stage.
+release process. Every revision that is committed triggers an automated build and 
+test. With continuous delivery, code changes are automatically built, tested, and
+prepared for a release to production. Continuous delivery expands upon continuous
+integration by deploying all code changes to a testing environment and/or a
+production environment after the build stage.
