@@ -47,7 +47,7 @@ some Security Pactices and others
 
 ## Steps of Building the Solution
 
-# Project Planning
+### Project Planning
 
 Task: understand the requirements and expectations, create
 a project plan, choose which practices to include in the project
@@ -58,7 +58,7 @@ Continuous Integration, Continuous Delivery, Security, Docker, Kubernetes.
 
 SDLC phase: Plan
 
-# Source control
+### Source control
 
 Task: set up a git repository for the project
 
@@ -67,7 +67,7 @@ repository with the Tic Tac Toe application source code.
 
 SDLC phase: Code (it involves managing and tracking changes to the codebase)
 
-# Branching strategies
+### Branching strategies
 
 Task: choose a branching strategy that fits the project
 
@@ -77,7 +77,7 @@ step I created the "develop" branch and started to work there.
 
 SDLC phase: Code (they pertain to organizing and managing code branches)
 
-# Style Checks
+### Style Checks
 
 Task: execute checks that are intended to enforce a consistent
 coding style across the project
@@ -90,7 +90,7 @@ workflow pipeline with these three security checks.
 SDLC phase: Code (they ensure code consistency and adherence to coding
 standards during the coding phase)
 
-# Testing
+### Testing
 
 Task: execute unit tests to ensure that the application logic is correct
 
@@ -101,7 +101,7 @@ checks to be completed.
 
 SDLC phase: Test
 
-# Security
+### Security
 
 Task: integrate static code analysis (SAST) tools into the Cl pipeline
 
@@ -113,7 +113,7 @@ as variables to grant access. They are executed in parallel with the unit tests.
 SDLC phase: Operate (it is an ongoing consideration throughout the SDLC but
 becomes critical during the operational phase)
 
-# Docker
+### Docker
 
 Task: write a Dockerfile to containerize the application, build and test
 the Docker image locally, and then itegrate it to the pipeline with build and
@@ -134,7 +134,7 @@ to [http://localhost:8000/]
 SDLC: Build, Deploy (it is involved in building containerized applications and
 deploying them in consistent environments)
 
-# Kubernetes
+### Kubernetes
 
 Task: set up a local Kubernetes cluster
 
@@ -156,7 +156,7 @@ SDLC phase: Release, Deploy, Operate (it defines how your application should be
 represented and configured for deploymenit, it is also primarily associated with
 deploying and operating containerized applications in a production environment)
 
-# Continuous Integration
+### Continuous Integration
 
 Task: use GitHub Action CI tool to set up a basic build pipeline
 
@@ -167,7 +167,7 @@ pipeline includes: style checks, testing, security and docker.
 SDLC phase: Build, Test (it involves automatically integrating code changes and
 running tests to ensure code quality)
 
-# Continuous Delivery
+### Continuous Delivery
 
 Task: manually deploy the app to a Kubernetes cluster
 
@@ -179,7 +179,7 @@ intervention, it would be referred to as Continuous Deployment.
 SDLC phase: Release, Deploy (it releases and deploy of applications to different
 environments)
 
-# Documentation
+### Documentation
 
 Task: document each step of the solution
 
@@ -191,7 +191,7 @@ operational phase to guide and support ongoing operations)
 
 ## Continuos Integration
 
-# Definition
+### Definition
 
 Continuous integration is a DevOps software development practice where
 developers regularly merge their code changes into a central repository,
@@ -201,7 +201,7 @@ The key goals of continuous integration are to find and address bugs quicker,
 improve software quality, and reduce the time it takes to validate and release
 new software updates.
 
-# Benefits
+### Benefits
 
 In the past, developers on a team might work in isolation for an extended
 period of time and only merge their changes to the master branch once their
@@ -216,7 +216,7 @@ they grow into larger problems later.
 Continuous integration helps your team deliver updates to their customers faster and
 more frequently.
 
-# Continuos Delivery
+### Continuos Delivery
 
 With continuous integration, developers frequently commit to a shared repository
 using a version control system such as Git. Prior to each commit, developers may
