@@ -113,16 +113,17 @@ SDLC: Implementation and Testing Phase
 - Kubernetes: set up a local Kubernetes cluster
 
 First I wrote Kubernetes manifests (deployment.yaml and service.yaml, using
-NodePort for the connection) to define the application deployment. Then, I started
+NodePort for the connection) to define the application deployment. The deployment
+specifies the number of replicas, selector labels, and container settings: Docker
+image is always pulled from DockerHub, and the container port is 80. The service
+selects pods and exposes the servise on port 80 within the Kubernetes cluster. The
+NodePort exposes the Service on each Node's IP at a static port. Then, I started
 my Docker and Minikube. With all this being set, I executed the following commands:
-1. docker build -t tic-tac-toe:latest .
-2. docker tag tic-tac-toe:latest tic-tac-toe:latest
-3. docker images # to verify that my local image is listed
-4. kubectl apply -f deployment.yaml
-5. kubectl get pods # ensure that the pod transitions to the Running state
-6. kubectl apply -f service.yaml
-7. minikube service tic-tac-toe-service # the app should automatically be opened in
-browser
+1. kubectl apply -f deployment.yaml
+2. kubectl get pods # ensure that the pod transitions to the Running state
+3. kubectl apply -f service.yaml
+4. minikube service tic-tac-toe-service # the app should automatically be opened in
+a browser on the machine at a dynamically assigned port
 Following this step, the app is successfully deployed to Kubernetes cluster.
 
 SDLC phase: Implementation and Testing Phase
