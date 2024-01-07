@@ -158,10 +158,10 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t image:${{ github.sha }} .
+        run: docker build -t modern-devops-practices-project:latest .
 
       - name: Tag Docker image
-        run: docker tag image:${{ github.sha }} ivnmaria/modern-devops-practices-project:${{ github.sha }}
+        run: docker tag modern-devops-practices-project:latest ivnmaria/modern-devops-practices-project:latest
 
       - name: Push Docker image
-        run: docker push ivnmaria/modern-devops-practices-project:${{ github.sha }}
+        run: docker push ivnmaria/modern-devops-practices-project:latest
