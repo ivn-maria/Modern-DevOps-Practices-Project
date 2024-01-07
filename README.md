@@ -150,11 +150,12 @@ image is always pulled from DockerHub, and the container port is 80. The service
 selects pods and exposes the servise on port 80 within the Kubernetes cluster. The
 NodePort exposes the Service on each Node's IP at a static port. Then, I started
 my Docker and Minikube. With all this being set, I executed the following commands:
+
 1. kubectl apply -f deployment.yaml
 2. kubectl get pods # ensure that the pod transitions to the Running state
 3. kubectl apply -f service.yaml
-4. minikube service tic-tac-toe-service # the app should automatically be opened in
-a browser on the machine at a dynamically assigned port
+4. minikube service tic-tac-toe-service # the app should automatically be opened
+in a browser on the machine at a dynamically assigned port
 Following this step, the app is successfully deployed to Kubernetes cluster.
 
 SDLC phase: Release, Deploy, Operate (it defines how your application should be
