@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: tic-tac-toe-container
-        image: tic-tac-toe:latest
-        imagePullPolicy: Never
+        image: ivnmaria/modern-devops-practices-project:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
