@@ -63,7 +63,9 @@ SDLC phase: Plan
 Task: set up a git repository for the project
 
 Process: This repository is set up by forking [Tic-Tac-Toe](https://github.com/BornaSepic/Tic-Tac-Toe)
-repository with the Tic Tac Toe application source code.
+repository with the Tic Tac Toe application source code. Locally, I build it
+with python3 -m http.server (should be in thw src directory), and this expose
+the application on [localhost:8000](http://localhost:8000/).
 
 SDLC phase: Code (it involves managing and tracking changes to the codebase)
 
@@ -95,8 +97,8 @@ standards during the coding phase)
 Task: execute unit tests to ensure that the application logic is correct
 
 Process: I executed a few unit tests to see if the functions in the source code are
-working as intended. When the unit tests were done and successfully executed,
-I added them as the next step in the pipeline that first waits the style
+working as intended. When the unit tests were done and successfully executed with
+npm test, I added them as the next step in the pipeline that first waits the style
 checks to be completed.
 
 SDLC phase: Test
