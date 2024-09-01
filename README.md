@@ -142,10 +142,6 @@ deploying them in consistent environments)
 Task: set up a local Kubernetes cluster
 
 Process: First I wrote Kubernetes manifests (deployment.yaml and service.yaml, using
-NodePort) to define the application deployment. Then, I started my Docker and
-Minikube. With all this being set, I executed the following commands:
-
-First I wrote Kubernetes manifests (deployment.yaml and service.yaml, using
 NodePort for the connection) to define the application deployment. The deployment
 specifies the number of replicas, selector labels, and container settings: Docker
 image is always pulled from DockerHub, and the container port is 80. The service
